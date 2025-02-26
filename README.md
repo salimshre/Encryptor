@@ -1,72 +1,103 @@
-🔒 Encryptor++
+# 🔒 Encryptor++
 
-🚀 Encryptor++ is a high-performance encryption tool built in C++ that leverages the best cryptographic algorithms to secure your data. Designed for speed, security, and simplicity, this project ensures that your sensitive information remains protected.
+🚀 **Encryptor++** is a high-performance encryption tool built in C++ that leverages the best cryptographic algorithms to secure your data. Designed for speed, security, and simplicity, this project ensures that your sensitive information remains protected.
 
-📌 Features
+---
 
-✅ Advanced encryption algorithms (AES, RSA, etc.)✅ Fast and efficient encryption & decryption✅ User-friendly command-line interface✅ Secure key management system✅ Open-source and customizable
+## 📌 Features
 
-⚙️ Algorithms Used
+✨ **Advanced encryption algorithms** (AES, RSA, etc.)\
+⚡ **Fast and efficient** encryption & decryption\
+💻 **User-friendly** command-line interface\
+🔑 **Secure key management** system\
+🌍 **Open-source & customizable**
+
+---
+
+## ⚙️ Algorithms Used
 
 We employ state-of-the-art encryption techniques:
 
-AES (Advanced Encryption Standard) - Symmetric encryption for secure data storage.
+- 🔐 **AES (Advanced Encryption Standard)** - Symmetric encryption for secure data storage.
+- 🔑 **RSA (Rivest-Shamir-Adleman)** - Asymmetric encryption for secure key exchange.
+- 🏛️ **Caesar Cipher** - A simple encryption technique for demonstration.
+- 🛡 **Custom Hashing** - Hash functions to validate data integrity.
 
-RSA (Rivest-Shamir-Adleman) - Asymmetric encryption for secure key exchange.
+---
 
-Caesar Cipher - A simple encryption technique for demonstration.
+## 🛠️ Installation & Usage
 
-Custom Hashing - Hash functions to validate data integrity.
+### 🔽 Clone the Repository
 
-🛠️ Installation & Usage
-
-🔽 Clone the Repository
-
+```sh
  git clone https://github.com/yourusername/Encryptor-CPP.git
  cd Encryptor-CPP
+```
 
-🏗️ Compile the Program
+### 🏗️ Compile the Program
 
+```sh
 g++ encryptor.cpp -o encryptor
+```
 
-▶️ Run the Program
+### ▶️ Run the Program
 
+```sh
 ./encryptor
+```
 
-📝 How It Works
+---
 
-Choose the encryption method.
+## 📝 How It Works
 
-Input the text or file to be encrypted.
+1️⃣ Choose the encryption method.\
+2️⃣ Input the text or file to be encrypted.\
+3️⃣ Provide a secure key (if applicable).\
+4️⃣ Get the encrypted output.\
+5️⃣ Decrypt using the correct key.
 
-Provide a secure key (if applicable).
+---
 
-Get the encrypted output.
+## 📌 Example Usage
 
-Decrypt using the correct key.
+🔒 **Encrypt a message:**
 
-📌 Example Usage
-
-Encrypt a message:
-
+```sh
 Enter text to encrypt: Hello World
 Choose algorithm (AES, RSA, Caesar): AES
 Enter key: mysecurekey
 Encrypted Output: Xk9sI3zB2...
+```
 
-Decrypt a message:
+🔓 **Decrypt a message:**
 
+```sh
 Enter encrypted text: Xk9sI3zB2...
 Choose algorithm: AES
 Enter key: mysecurekey
 Decrypted Output: Hello World
+```
 
-🔗 Contributing
+---
 
-Contributions are welcome! Feel free to fork this repository, submit issues, or create pull requests to improve Encryptor++.
+## 🔗 Contributing
 
-📜 License
+🙌 Contributions are welcome! Feel free to fork this repository, submit issues, or create pull requests to improve **Encryptor++**.
 
-This project is licensed under the MIT License - feel free to use and modify it as needed.
+---
 
-🌟 Star this repo if you found it useful! 🚀
+## 👨‍💻 Team Members
+- **Aayush Kumar Mallik**
+- **Sarswoti**
+- **Salim Shrestha**
+
+---
+
+## 📜 License
+
+📄 This project is licensed under the **MIT License** - feel free to use and modify it as needed.
+
+---
+
+🌟 **Star this repo if you found it useful!** 🚀
+
