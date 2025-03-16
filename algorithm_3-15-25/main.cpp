@@ -8,7 +8,7 @@ int main() {
     char mode;
 
     cout << "Enter the filename: ";
-    getline(cin >> ws, filename);
+    getline(cin >> ws, filename); //ws (whitespace manipulator) is used to ignore any leading whitespace (like spaces, tabs, or newlines) before reading input.
 
     cout << "Encrypt (e) or Decrypt (d)? ";
     cin >> mode;
@@ -31,3 +31,4 @@ int main() {
 
     return 0;
 }
+/* some changes */
