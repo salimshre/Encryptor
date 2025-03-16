@@ -52,8 +52,9 @@ https://sourceforge.net/projects/mingw/
 the vieo refrence is
 https://www.youtube.com/watch?v=GNzeSTZjziI&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=14
 
-command to run this algorithms
+## 📝 command to run this algorithms
 g++ main.cpp encryption.cpp -o run
+
 ---
 
 ## 📝 How It Works
