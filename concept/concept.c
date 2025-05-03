@@ -1,30 +1,31 @@
 #include <stdio.h>
-#include <ctype.h>
-
-#define SHIFT 3  // Shift value for encryption
+#include <stdlib.h>
 
 int main() {
-    char text[100];
-    int i;
+    FILE *input, *output;
+    char ch;
 
-    printf("Enter text to encrypt: ");
-    fgets(text, sizeof(text), stdin);
-
-    for (i = 0; text[i] != '\0'; i++) {
-        if (isupper(text[i])) {
-            // Encrypt uppercase letters
-            text[i] = ((text[i] - 'A' + SHIFT) % 26) + 'A';
-        } else if (islower(text[i])) {
-            // Encrypt lowercase letters
-            text[i] = ((text[i] - 'a' + SHIFT) % 26) + 'a';
-        }
-        // Non-alphabetic characters remain unchanged
+    input = fopen("input.txt", "r");
+    if (input == NULL) {
+        printf("Error opening input file!\n");
+        exit(1);
     }
 
-    printf("Encrypted text: %s", text);
+    output = fopen("output.txt", "w");
+    if (output == NULL) {
+        printf("Error opening output file!\n");
+        fclose(input);
+        exit(1);
+    }
+
+    while ((ch = fgetc(input)) != EOF) {
+        fputc(ch, output);
+    }
+
+    printf("File copied successfully!\n");
+
+    fclose(input);
+    fclose(output);
+
     return 0;
 }
-/*making any changes 01
-changes 02 03
-changed by aayush
-*/
