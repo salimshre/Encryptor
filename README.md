@@ -56,6 +56,10 @@ https://www.youtube.com/watch?v=GNzeSTZjziI&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE
 g++ main.cpp encryption.cpp -o run
 
 ---
+## Tools need to run g++ (mingw)
+- **First download mingw from **https://sourceforge.net/projects/mingw/****
+- **for more details follow below videos descriptions**
+- **(https://www.youtube.com/watch?v=8CNRX1Bk5sY&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=13)**
 
 ## 📝 How It Works
 
