@@ -25,30 +25,6 @@ We employ state-of-the-art encryption techniques:
 
 ---
 
-## 🛠️ Installation & Usage
-
-### 🔽 Clone the Repository
-
-```sh
- git clone https://github.com/yourusername/Encryptor-CPP.git
- cd Encryptor-CPP
-```
-
-### 🏗️ Compile the Program
-
-```sh
-g++ encryptor.cpp -o encryptor
-```
-
-### ▶️ Run the Program
-
-```sh
-./encryptor
-```
-### ▶️ Run the Program from command prompt
-install gcc from this websites
-
-
 # 📌How to Install GCC (MinGW) on Windows
 
 🎥 **Video Reference:**  
@@ -201,7 +177,7 @@ Decrypted Output: Hello World
 
 ## 👨‍💻 Team Members
 - **Aayush Kumar Mallik**
-- **Sarswoti**
+- **Sarswoti Rokaya**
 - **Salim Shrestha**
 
 ---
