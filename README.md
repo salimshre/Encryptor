@@ -47,19 +47,47 @@ g++ encryptor.cpp -o encryptor
 ```
 ### ▶️ Run the Program from command prompt
 install gcc from this websites
-https://sourceforge.net/projects/mingw/
 
-the vieo refrence is
-https://www.youtube.com/watch?v=GNzeSTZjziI&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=14
+
+# How to Install GCC (MinGW) on Windows
+
+🎥 **Video Reference:**  
+[How to Install GCC](https://www.youtube.com/watch?v=GNzeSTZjziI&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=14)
+
+## 🛠️ Steps to Install GCC
+
+1. **Download MinGW**  
+   Visit [https://sourceforge.net/projects/mingw/](https://sourceforge.net/projects/mingw/) and download the installer.
+
+2. **Install MinGW**  
+   Run the downloaded installer and follow the on-screen instructions.
+
+3. **Install GCC Packages**  
+   In the MinGW Installation Manager:
+   - Select the package: `mingw32-gcc-g++` (GNU C++ compiler).
+   - Go to **Installation → Apply Changes → Apply**.
+
+4. **Set Environment Variables**  
+   - Search for **Environment Variables** in the Windows search bar.
+   - Click on **Edit the system environment variables**.
+   - In the **System Properties** window, click **Environment Variables**.
+
+5. **Edit System PATH**  
+   - Under **System Variables**, select the `Path` variable and click **Edit**.
+   - Click **New** and add this path:
+     ```
+     C:\MinGW\bin
+     ```
+   - Click **OK** to save changes.
+
+6. **Verify GCC Installation**  
+   Open Command Prompt and run:
+
 
 ## 📝 command to run this algorithms
 g++ main.cpp encryption.cpp -o run
 
 ---
-## Tools need to run g++ (mingw)
-- **First download mingw from **https://sourceforge.net/projects/mingw/****
-- **for more details follow below videos descriptions**
-- **(https://www.youtube.com/watch?v=8CNRX1Bk5sY&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=13)**
 
 ## 📝 How It Works
 
