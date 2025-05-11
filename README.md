@@ -49,7 +49,7 @@ g++ encryptor.cpp -o encryptor
 install gcc from this websites
 
 
-# How to Install GCC (MinGW) on Windows
+# 📌How to Install GCC (MinGW) on Windows
 
 🎥 **Video Reference:**  
 [How to Install GCC](https://www.youtube.com/watch?v=GNzeSTZjziI&list=PLciC3-3T2N8b6upiQv9Js-158nqmAE3xg&index=14)
@@ -83,6 +83,77 @@ install gcc from this websites
 6. **Verify GCC Installation**  
    Open Command Prompt and run:
    gcc -v
+
+
+
+---
+
+
+# 📌Setting Up Visual Studio Code for C and C++ Programming
+
+This guide will walk you through setting up your environment for C and C++ development using Visual Studio Code.
+
+---
+
+## 📺 Video Tutorial
+
+Watch the full tutorial on YouTube:  
+[![Setup Guide](https://img.shields.io/badge/Watch%20Video-%F0%9F%93%BA-red)](https://www.youtube.com/watch?v=1PBD5qFWdq8)
+
+---
+
+## 🧰 Prerequisites
+
+You need to install **MSYS2** to get the required C/C++ compilers.
+
+### 🔽 Steps to Install MSYS2
+
+1. Visit [https://www.msys2.org](https://www.msys2.org).
+2. From the *Installation* section, click on `msys2-x86_64.exe` to download the installer.
+3. Run the installer and complete the installation.
+4. A black MSYS2 terminal will pop up — **do not close it**.
+5. In the terminal, run the following command:
+
+   ```bash
+   pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
+   ```
+
+6. Press **Enter** to select defaults.
+7. Type **y** to confirm installation and let the tools download and install.
+
+---
+
+## 🔧 Set Environment Variables
+
+1. Search for **"Environment Variables"** in the Windows search bar.
+2. Click **Edit the system environment variables**.
+3. In the System Properties window, click **Environment Variables**.
+4. Under **System Variables**, select the `Path` variable and click **Edit**.
+5. Click **New**, then paste this path:
+
+   ```
+   C:\msys64\ucrt64\bin
+   ```
+
+6. Click **OK** to save and close all dialogs.
+
+---
+
+## ✅ Verify GCC Installation
+
+To verify that everything is installed correctly:
+
+1. Open **Command Prompt**.
+2. Run the following command:
+
+   ```bash
+   gcc --version
+   ```
+
+You should see the GCC version info if everything is set up correctly.
+
+---
+
 
 
 ## 📝 command to run this algorithms
