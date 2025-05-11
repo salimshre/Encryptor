@@ -82,6 +82,7 @@ install gcc from this websites
 
 6. **Verify GCC Installation**  
    Open Command Prompt and run:
+   gcc -v
 
 
 ## 📝 command to run this algorithms
