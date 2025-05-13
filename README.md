@@ -130,7 +130,22 @@ You should see the GCC version info if everything is set up correctly.
 
 ---
 
+## 📌How to setup graphics.h in VS Code | CodeWar
+https://www.youtube.com/watch?app=desktop&v=J0_vt-7Ok6U&pp=ygUNI21lbnVncmFwaGljaA%3D%3D
+ctr +shift+b => to select build task.
+program to test
+#include <graphics.h>
 
+int main(int argc, char const *argv[]) {
+    int gd = DETECT, gm;
+    initgraph(&gd, &gm, (char*)"hello");
+    circle(320, 240, 200);
+    getch();
+    closegraph();
+    return 0;
+}
+
+---
 
 ## 📝 command to run this algorithms
 g++ main.cpp encryption.cpp -o run
