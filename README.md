@@ -145,6 +145,16 @@ int main(int argc, char const *argv[]) {
     return 0;
 }
 
+steps: 
+step1: compiler path: C:\TDM-GCC-32\bin\g++.exe
+step2:compiler arguments: -lbgi
+-lgdi32
+-lcomdlg32
+-luuid
+-loleaut32
+-lole32
+step3:IntelliSense mode: select windows-gcc-x86
+step4:c++ standard: use c++ 11
 ---
 
 ## 📝 command to run this algorithms
