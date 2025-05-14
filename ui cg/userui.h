@@ -4,7 +4,5 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_WIDTH 1160
-#define MAX_HEIGHT 700
-
-
+#define SCREEN_WIDTH 800
+#define SCREEN_HEIGHT 600

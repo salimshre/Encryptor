@@ -3,8 +3,7 @@
 #include "userui.h"
 
 
-#define MAX_WIDTH 1160
-#define MAX_HEIGHT 700
+
 
 
 int main(int argc, char const *argv[]) {
@@ -22,8 +21,8 @@ int main(int argc, char const *argv[]) {
     initwindow(800, 600, "Mouse Coordinate Tester");
 
     // Instructions
-    outtextxy(100, 100, "Click anywhere in the window to get an coordinates...");
-    outtextxy(100, 120, "Press any key to stop.");
+    outtextxy(100, 100, (char*) "Click anywhere in the window to get an coordinates...");
+    outtextxy(100, 120, (char*) "Press any key to stop.");
 
     // Wait for mouse click
     while (!kbhit()) { //this looop continues untill the key is pressed.
@@ -55,7 +54,7 @@ void background_image(){
         setfillstyle(SOLID_FILL, LIGHTGRAY);
         bar(150,60,1020,130); // fill rectange on a screen
         settextstyle(SIMPLEX_FONT, HORIZ_DIR, 7); //font size is 7
-        outtextxy(150, 60, "Encryption");
+        outtextxy(150, 60, (char*)"Encryption");
     }
 
     void user_interference() {
