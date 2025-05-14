@@ -63,14 +63,9 @@ void user_interference() {
         // Reset to default font for other elements
         settextstyle(DEFAULT_FONT, HORIZ_DIR, 1); 
 
-        /*
         setcolor(WHITE);
-        rectangle(327, 181, 800 - 20, 605);
-        setfillstyle(SOLID_FILL, LIGHTGRAY);
-        bar(382, 182, 780, 604);
+        rectangle(327, 181, 838, 605);
 
-        rectangle(343, 195, 800-20, 587);
-        setfillstyle(SOLID_FILL, BLACK);
-        bar(344, 196, 780-1, 586);
-*/
+        
+        
 }
