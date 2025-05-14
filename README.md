@@ -130,10 +130,18 @@ You should see the GCC version info if everything is set up correctly.
 
 ---
 
-## 📌How to setup graphics.h in VS Code | CodeWar
-https://www.youtube.com/watch?app=desktop&v=J0_vt-7Ok6U&pp=ygUNI21lbnVncmFwaGljaA%3D%3D
-ctr +shift+b => to select build task.
-program to test
+## 📌 How to setup graphics.h in VS Code | CodeWar
+
+[Watch on YouTube](https://www.youtube.com/watch?app=desktop&v=J0_vt-7Ok6U&pp=ygUNI21lbnVncmFwaGljaA%3D%3D)
+
+**Shortcut:**  
+`Ctrl + Shift + B` => to select build task.
+
+---
+
+### 🧪 Program to Test
+
+```cpp
 #include <graphics.h>
 
 int main(int argc, char const *argv[]) {
@@ -144,17 +152,31 @@ int main(int argc, char const *argv[]) {
     closegraph();
     return 0;
 }
+```
 
-steps: 
-step1: compiler path: C:\TDM-GCC-32\bin\g++.exe
-step2:compiler arguments: -lbgi
+---
+
+### 🛠️ Steps
+
+**Step 1:** Compiler path:  
+`C:\TDM-GCC-32in\g++.exe`
+
+**Step 2:** Compiler arguments:
+```
+-lbgi
 -lgdi32
 -lcomdlg32
 -luuid
 -loleaut32
 -lole32
-step3:IntelliSense mode: select windows-gcc-x86
-step4:c++ standard: use c++ 11
+```
+
+**Step 3:** IntelliSense mode:  
+Select `windows-gcc-x86`
+
+**Step 4:** C++ standard:  
+Use `C++11`
+
 ---
 
 ## 📝 command to run this algorithms
