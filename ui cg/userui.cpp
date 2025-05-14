@@ -51,9 +51,9 @@ void background_image(){
 void title(){
         setcolor(WHITE);
         setfillstyle(SOLID_FILL, LIGHTGRAY);
-        bar(150,60,1020,130); // fill rectange on a screen
-        settextstyle(SIMPLEX_FONT, HORIZ_DIR, 7); //font size is 7
-        outtextxy(150, 60, (char*)"Encryption");
+        bar(100,60,700,130); // fill rectange on a screen
+        settextstyle(SIMPLEX_FONT, HORIZ_DIR, 4); //font size is 7
+        outtextxy(300, 60, (char*)"Encryption");
 }
 
 void user_interference() {
@@ -63,7 +63,7 @@ void user_interference() {
         // Reset to default font for other elements
         settextstyle(DEFAULT_FONT, HORIZ_DIR, 1); 
 
-        // 
+        /*
         setcolor(WHITE);
         rectangle(327, 181, 800 - 20, 605);
         setfillstyle(SOLID_FILL, LIGHTGRAY);
@@ -72,5 +72,5 @@ void user_interference() {
         rectangle(343, 195, 800-20, 587);
         setfillstyle(SOLID_FILL, BLACK);
         bar(344, 196, 780-1, 586);
-
+*/
 }
