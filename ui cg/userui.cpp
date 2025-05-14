@@ -4,14 +4,17 @@
 
 
 int main(int argc, char const *argv[]) {
-    int gd = DETECT, gm;
-    initgraph(&gd, &gm, (char*)"hello");
-    circle(320, 240, 200);
+    // int gd = DETECT, gm;
+    // initgraph(&gd, &gm, (char*)"hello");
+    // circle(320, 240, 200); //unnecessary drawing.
 
 
     int x, y;
     // Initialize graphics window
-    initwindow(800, 600, "Mouse Coordinate Tester");
+    initwindow(800, 600, "Encryption Tool");
+
+    // Draw UI elements
+    user_interference();
 
     // Instructions
     outtextxy(100, 100, (char*) "Click anywhere in the window to get an coordinates...");
@@ -25,6 +28,9 @@ int main(int argc, char const *argv[]) {
             // Display coordinates
             char coord[50];
             sprintf(coord, "You clicked at: %d, %d", x, y);
+            
+            settextstyle(DEFAULT_FONT, HORIZ_DIR, 1); //explicitly set the font size before drawing
+
             outtextxy(100, 150, coord);
         }
     }
@@ -39,29 +45,32 @@ int main(int argc, char const *argv[]) {
 }
 
 void background_image(){
-        readimagefile("background.png",0,0,SCREEN_WIDTH, SCREEN_HEIGHT); //screen width will cover an full screen.
+        readimagefile("background.bmp",0,0,SCREEN_WIDTH, SCREEN_HEIGHT); //screen width will cover an full screen.
     }
 
-    void title(){
+void title(){
         setcolor(WHITE);
         setfillstyle(SOLID_FILL, LIGHTGRAY);
         bar(150,60,1020,130); // fill rectange on a screen
         settextstyle(SIMPLEX_FONT, HORIZ_DIR, 7); //font size is 7
         outtextxy(150, 60, (char*)"Encryption");
-    }
+}
 
-    void user_interference() {
+void user_interference() {
         background_image();
         title();
 
+        // Reset to default font for other elements
+        settextstyle(DEFAULT_FONT, HORIZ_DIR, 1); 
+
+        // 
         setcolor(WHITE);
-        rectangle(327, 181, 838, 605);
+        rectangle(327, 181, 800 - 20, 605);
         setfillstyle(SOLID_FILL, LIGHTGRAY);
-        bar(382, 182, 837, 604);
+        bar(382, 182, 780, 604);
 
-        rectangle(343, 195, 823, 587);
+        rectangle(343, 195, 800-20, 587);
         setfillstyle(SOLID_FILL, BLACK);
-        bar(344, 196, 822, 586);
+        bar(344, 196, 780-1, 586);
 
-        
-    }
+}
