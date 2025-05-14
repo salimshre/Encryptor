@@ -157,11 +157,12 @@ int main(int argc, char const *argv[]) {
 ---
 
 ### 🛠️ Steps
+**Step 1:** go to view/command palatte/search for c/c++ configurations .for shortcut ctr+shift+p 
 
-**Step 1:** Compiler path:  
+**Step 2:** Compiler path:  
 `C:\TDM-GCC-32in\g++.exe`
 
-**Step 2:** Compiler arguments:
+**Step 3:** Compiler arguments:
 ```
 -lbgi
 -lgdi32
@@ -171,10 +172,10 @@ int main(int argc, char const *argv[]) {
 -lole32
 ```
 
-**Step 3:** IntelliSense mode:  
+**Step 4:** IntelliSense mode:  
 Select `windows-gcc-x86`
 
-**Step 4:** C++ standard:  
+**Step 5:** C++ standard:  
 Use `C++11`
 
 ---
