@@ -32,7 +32,6 @@ int main(int argc, char const *argv[]) {
     }
 
     
-
     
 
     getch();
@@ -40,3 +39,28 @@ int main(int argc, char const *argv[]) {
     return 0;
     //test
 }
+
+void background_image(){
+        readimagefile("background.png",0,0,SCREEN_WIDTH, SCREEN_HEIGHT); //screen width will cover an full screen.
+    }
+
+    void title(){
+        setcolor(WHITE);
+        setfillstyle(SOLID_FILL, LIGHTGRAY);
+        bar(150,60,1020,130); // fill rectange on a screen
+        settextstyle(SIMPLEX_FONT, HORIZ_DIR, 7); //font size is 7
+        outtextxy(150, 60, "Encryption");
+    }
+
+    void user_interference() {
+        background_image();
+        title();
+
+        setcolor(WHITE);
+        rectangle(327, 181, 838, 605);
+        setfillstyle(SOLID_FILL, LIGHTGRAY);
+        bar(382, 182, 837, 604);
+
+        
+
+    }
