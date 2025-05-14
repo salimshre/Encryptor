@@ -1,5 +1,11 @@
 #include <graphics.h>
 #include <conio.h>
+#include "userui.h"
+
+
+#define MAX_WIDTH 1160
+#define MAX_HEIGHT 700
+
 
 int main(int argc, char const *argv[]) {
     int gd = DETECT, gm;
