@@ -3,20 +3,13 @@
 #include "userui.h"
 
 
-
-
-
 int main(int argc, char const *argv[]) {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, (char*)"hello");
     circle(320, 240, 200);
 
-    
-
-
 
     int x, y;
-
     // Initialize graphics window
     initwindow(800, 600, "Mouse Coordinate Tester");
 
@@ -66,6 +59,9 @@ void background_image(){
         setfillstyle(SOLID_FILL, LIGHTGRAY);
         bar(382, 182, 837, 604);
 
-        
+        rectangle(343, 195, 823, 587);
+        setfillstyle(SOLID_FILL, BLACK);
+        bar(344, 196, 822, 586);
 
+        
     }
