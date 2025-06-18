@@ -7,7 +7,7 @@ int main(int argc, char const *argv[]) {
     // int gd = DETECT, gm;
     // initgraph(&gd, &gm, (char*)"hello");
     // circle(320, 240, 200); //unnecessary drawing.
-
+    // checklist for
 
     int x, y;
     // Initialize graphics window
