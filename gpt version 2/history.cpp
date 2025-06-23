@@ -1,6 +1,7 @@
 #include "history.h"
 #include <fstream>
 #include <ctime>
+#include <cstring>
 
 void logHistory(const std::string& action, const std::string& filename) {
     std::ofstream hist("history.txt", std::ios::app);

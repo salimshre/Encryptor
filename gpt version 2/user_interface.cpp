@@ -18,6 +18,10 @@ void show_message_box(const char* message) {
 void show_main_menu() {
     int x, y;
     while (!kbhit()) {
+
+        readimagefile("background.bmp", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+        
         setbkcolor(BLACK);
         cleardevice();
         settextstyle(DEFAULT_FONT, HORIZ_DIR, 3);
