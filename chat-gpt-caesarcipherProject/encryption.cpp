@@ -19,7 +19,8 @@ bool encryptFile(const string& filename, bool Encrypt) {
     ifstream inFile(filename);
     if (!inFile) return false;
 
-    string content((istreambuf_iterator<char>(inFile)), {});
+    string content((istreambuf_iterator<char>(inFile)), {}); 
+    //Reads entire file content into a string.
     inFile.close();
 
     if (performCaeserCipher(content, Encrypt)) {

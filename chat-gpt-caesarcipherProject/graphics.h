@@ -27,3 +27,7 @@ enum { WHITE=15, LIGHTGRAY=7, DEFAULT_FONT=0, HORIZ_DIR=1, SIMPLEX_FONT=0, SOLID
 enum { WM_LBUTTONDOWN=0x0201 };
 
 #endif // GRAPHICS_H
+
+
+/* You don’t write the code for these, 
+they are just declared here so you can use them in userui.cpp */
