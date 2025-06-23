@@ -16,29 +16,29 @@ void show_message_box(const char* message) {
 }
 
 void show_main_menu() {
+    cleardevice();  // Clear screen once
+    readimagefile("background.bmp", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
+
+    setbkcolor(BLACK);
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 3);
+    outtextxy(300, 100, (char*)"Encryption Tool");
+
+    bar(300, 180, 500, 220); rectangle(300, 180, 500, 220); outtextxy(340, 190, (char*)"Start");
+    bar(300, 280, 500, 320); rectangle(300, 280, 500, 320); outtextxy(340, 290, (char*)"History");
+    bar(300, 380, 500, 420); rectangle(300, 380, 500, 420); outtextxy(340, 390, (char*)"Exit");
+
     int x, y;
-    while (!kbhit()) {
-
-        readimagefile("background.bmp", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
-
-        
-        setbkcolor(BLACK);
-        cleardevice();
-        settextstyle(DEFAULT_FONT, HORIZ_DIR, 3);
-        outtextxy(300, 100, (char*)"Encryption Tool");
-
-        bar(300, 180, 500, 220); rectangle(300, 180, 500, 220); outtextxy(340, 190, (char*)"Start");
-        bar(300, 280, 500, 320); rectangle(300, 280, 500, 320); outtextxy(340, 290, (char*)"History");
-        bar(300, 380, 500, 420); rectangle(300, 380, 500, 420); outtextxy(340, 390, (char*)"Exit");
-
+    while (true) {
         if (ismouseclick(WM_LBUTTONDOWN)) {
             getmouseclick(WM_LBUTTONDOWN, x, y);
             clearmouseclick(WM_LBUTTONDOWN);
 
             if (x >= 300 && x <= 500 && y >= 180 && y <= 220) {
                 run_cipher_interface("");
+                return;
             } else if (x >= 300 && x <= 500 && y >= 280 && y <= 320) {
                 show_history_screen();
+                return;
             } else if (x >= 300 && x <= 500 && y >= 380 && y <= 420) {
                 show_message_box("Exiting...");
                 delay(1000);
@@ -47,6 +47,7 @@ void show_main_menu() {
         }
     }
 }
+
 
 void run_cipher_interface(const string& unused) {
     closegraph();
