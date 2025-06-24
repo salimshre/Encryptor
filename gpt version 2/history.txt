@@ -10,3 +10,5 @@
 [Tue Jun 24 22:03:38 2025] Encrypted: salim.txt
 [Tue Jun 24 22:24:04 2025] Decrypted: salim.txt
 [Tue Jun 24 22:24:57 2025] Decrypted: decrypted_salim.txt
+[Tue Jun 24 22:28:26 2025] Encrypted: salim.txt
+[Tue Jun 24 22:29:20 2025] Decrypted: encrypted_salim.txt
