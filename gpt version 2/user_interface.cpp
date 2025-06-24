@@ -63,6 +63,7 @@ void run_cipher_interface(const string& unused) {
         cout << "File not found." << endl;
         getch();
         //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
+        show_main_menu(); // return to menu
         return;
     }
 
@@ -88,7 +89,8 @@ void run_cipher_interface(const string& unused) {
         play_error_sound();
     }
 
-    getch();
+    getch(); //wait for key press
+    show_main_menu();  // 🔁 Return to main menu
     //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
 }
 
@@ -106,6 +108,7 @@ void show_history_screen() {
     }
     outtextxy(100, SCREEN_HEIGHT - 30, (char*)"Press any key to return to menu.");
     getch();
+    show_main_menu();  // 🔁 Return to main menu    
 }
 
 void play_success_sound() {
