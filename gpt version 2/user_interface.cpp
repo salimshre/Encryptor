@@ -50,7 +50,7 @@ void show_main_menu() {
 
 
 void run_cipher_interface(const string& unused) {
-    closegraph();
+    //closegraph();
 
     string filename;
     char mode;
@@ -62,7 +62,7 @@ void run_cipher_interface(const string& unused) {
         play_error_sound();
         cout << "File not found." << endl;
         getch();
-        initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
+        //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
         return;
     }
 
@@ -89,7 +89,7 @@ void run_cipher_interface(const string& unused) {
     }
 
     getch();
-    initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
+    //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
 }
 
 void show_history_screen() {
