@@ -61,6 +61,8 @@ void run_cipher_interface(const string& unused) {
     if (!test) {
         play_error_sound();
         cout << "File not found." << endl;
+        cout<< "prss any key to return to menu." << endl;
+        show_message_box("File not found.");
         getch();
         //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
         show_main_menu(); // return to menu
@@ -88,7 +90,8 @@ void run_cipher_interface(const string& unused) {
         cout << "Operation failed." << endl;
         play_error_sound();
     }
-
+    cout << "Press any key to return to the menu." << endl;
+    show_message_box(success ? "Operation successful." : "Operation failed.");
     getch(); //wait for key press
     show_main_menu();  // 🔁 Return to main menu
     //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
