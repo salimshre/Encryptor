@@ -15,6 +15,33 @@ void show_message_box(const char* message) {
     outtextxy(160, 510, (char*)message);
 }
 
+std::string get_text_input(int x, int y, int maxLength = 100) {
+    std::string input;
+    char ch;
+
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+    setcolor(WHITE);
+    setfillstyle(SOLID_FILL, BLACK);
+    bar(x - 2, y - 2, x + 400, y + 30); // input box background
+
+    while (true) {
+        ch = getch();
+
+        if (ch == 13) break; // Enter key
+        else if (ch == 8 && !input.empty()) { // Backspace
+            input.pop_back();
+        } else if (isprint(ch) && input.length() < maxLength) {
+            input += ch;
+        }
+
+        // Redraw input
+        bar(x, y, x + 400, y + 30);  // clear input area
+        outtextxy(x, y, (char*)input.c_str());
+    }
+
+    return input;
+}
+
 void show_main_menu() {
     cleardevice();  // Clear screen once
     readimagefile("background.bmp", 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
@@ -48,53 +75,65 @@ void show_main_menu() {
     }
 }
 
-
 void run_cipher_interface(const string& unused) {
-    //closegraph();
+    cleardevice();
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 3);
+    outtextxy(200, 100, (char*)"Enter the filename:");
 
-    string filename;
-    char mode;
-    cout << "Enter the filename: ";
-    getline(cin >> ws, filename);
+    string filename = get_text_input(200, 150);
 
     ifstream test(filename);
     if (!test) {
         play_error_sound();
-        cout << "File not found." << endl;
-        cout<< "prss any key to return to menu." << endl;
-        show_message_box("File not found.");
+        show_message_box("File not found. Press any key...");
         getch();
-        //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
-        show_main_menu(); // return to menu
+        show_main_menu();
         return;
     }
 
-    cout << "Encrypt (e) or Decrypt (d)? ";
-    cin >> mode;
+    // Draw Encrypt and Decrypt buttons
+    settextstyle(DEFAULT_FONT, HORIZ_DIR, 2);
+    outtextxy(200, 220, (char*)"Choose operation:");
+
+    bar(200, 260, 400, 300); rectangle(200, 260, 400, 300); outtextxy(250, 270, (char*)"Encrypt");
+    bar(420, 260, 620, 300); rectangle(420, 260, 620, 300); outtextxy(470, 270, (char*)"Decrypt");
+
+    int x, y;
+    char mode = 0;
+    while (true) {
+        if (ismouseclick(WM_LBUTTONDOWN)) {
+            getmouseclick(WM_LBUTTONDOWN, x, y);
+            clearmouseclick(WM_LBUTTONDOWN);
+
+            if (x >= 200 && x <= 400 && y >= 260 && y <= 300) {
+                mode = 'e';
+                break;
+            } else if (x >= 420 && x <= 620 && y >= 260 && y <= 300) {
+                mode = 'd';
+                break;
+            }
+        }
+    }
 
     bool success = false;
-    if (mode == 'e' || mode == 'E') {
+    if (mode == 'e') {
         success = encryptFile(filename, true);
         if (success) logHistory("Encrypted", filename);
-    } else if (mode == 'd' || mode == 'D') {
+    } else {
         success = encryptFile(filename, false);
         if (success) logHistory("Decrypted", filename);
-    } else {
-        cout << "Invalid option." << endl;
     }
 
     if (success) {
-        cout << "Operation successful." << endl;
+        show_message_box("Operation successful! Press any key...");
         play_success_sound();
     } else {
-        cout << "Operation failed." << endl;
+        show_message_box("Operation failed. Press any key...");
         play_error_sound();
     }
-    cout << "Press any key to return to the menu." << endl;
-    show_message_box(success ? "Operation successful." : "Operation failed.");
-    getch(); //wait for key press
-    show_main_menu();  // 🔁 Return to main menu
-    //initwindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Encryption Tool");
+
+    getch();
+    show_main_menu();
 }
 
 void show_history_screen() {
@@ -111,7 +150,7 @@ void show_history_screen() {
     }
     outtextxy(100, SCREEN_HEIGHT - 30, (char*)"Press any key to return to menu.");
     getch();
-    show_main_menu();  // 🔁 Return to main menu    
+    show_main_menu();
 }
 
 void play_success_sound() {
