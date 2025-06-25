@@ -1,0 +1,2 @@
+[2025-06-25T23:57:25] Encrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\gpt version 3\salim_1.txt
+[2025-06-25T23:57:45] Decrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\gpt version 3\encrypted_salim_1.txt

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <cctype>
 #include <vector>
+#include <string>
 
 namespace encryption {
 
@@ -23,7 +24,13 @@ bool processFile(const std::string& filename, bool encrypt, int shift) {
 
     caesarCipher(content, encrypt ? shift : -shift);
 
-    std::string outFilename = (encrypt ? "encrypted_" : "decrypted_") + filename;
+    // Manual output path construction
+    size_t lastSlash = filename.find_last_of("/\\");
+    std::string dir = (lastSlash == std::string::npos) ? "" : filename.substr(0, lastSlash + 1);
+    std::string base = (lastSlash == std::string::npos) ? filename : filename.substr(lastSlash + 1);
+
+    std::string outFilename = dir + (encrypt ? "encrypted_" : "decrypted_") + base;
+
     std::ofstream outFile(outFilename, std::ios::binary);
     if (!outFile) return false;
 
