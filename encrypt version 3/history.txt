@@ -4,3 +4,4 @@
 [2025-06-26T00:01:15] Decrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\gpt version 3\encrypted_salim_2.txt
 [2025-06-26T00:06:54] Encrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\gpt version 3\salim_4.txt
 [2025-06-26T00:07:18] Decrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\gpt version 3\encrypted_salim_4.txt
+[2025-06-30T00:18:56] Encrypted: C:\Users\ACER-WIN10\Documents\GitHub\Encryptor\encrypt version 3\salim_1.txt
