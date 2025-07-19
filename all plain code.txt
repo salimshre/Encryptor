@@ -1,5 +1,6 @@
 
 ---
+// inside of  ui folder
 
 **animations.h**
 ```
@@ -241,6 +242,7 @@ std::string openFileDialog();
 ```
 
 ---
+// inside of  core folder
 
 **history.h**
 ```
@@ -261,6 +263,8 @@ void log(const std::string& action, const std::string& filename);
 ```
 
 ---
+
+// inside of  core folder
 
 **encryption.cpp**
 ```
@@ -311,6 +315,7 @@ bool processFile(const std::string& filename, bool encrypt, int shift) {
 
 ---
 
+
 **main.cpp**
 ```
 #include <graphics.h>
@@ -325,7 +330,7 @@ int main() {
 ```
 
 ---
-
+// inside of  core folder
 **encryption.h**
 ```
 #ifndef ENCRYPTION_H
@@ -396,6 +401,7 @@ void play_error_sound();
 ```
 
 ---
+// inside of  core folder
 
 **history.cpp**
 ```
