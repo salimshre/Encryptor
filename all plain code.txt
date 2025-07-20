@@ -19,7 +19,7 @@ void show_loading_animation(const char* message);
 ```
 
 ---
-
+// inside of ui floder
 **animations.cpp**
 ```
 #include "animations.h"
@@ -222,7 +222,7 @@ void show_history_screen() {
 ```
 
 ---
-
+// inside of ui folder
 **helpers.h**
 ```
 #ifndef HELPERS_H
@@ -348,7 +348,7 @@ bool processFile(const std::string& filename, bool encrypt, int shift);
 ```
 
 ---
-
+// inside of ui folder
 **helpers.cpp**
 ```
 #include "helpers.h"
