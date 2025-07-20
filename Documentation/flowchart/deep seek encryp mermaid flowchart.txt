@@ -1,0 +1,59 @@
+flowchart TD
+    A([Start]) --> B[Initialize Graphics]
+    B --> C[Display Main Menu]
+    
+    C --> D{User Selection}
+    D -->|Start| E[Run Cipher Interface]
+    D -->|History| F[Show History Screen]
+    D -->|Exit| Z([End])
+    
+    %% Cipher Interface Flow
+    E --> G[Open File Dialog]
+    G --> H{File Selected?}
+    H -->|No| I[Show Error Message]
+    H -->|Yes| J[Check File Accessibility]
+    J -->|Accessible| K[Display Operation Choice]
+    J -->|Inaccessible| I
+    
+    K --> L{User Choice}
+    L -->|Encrypt| M[Set Mode = 'e']
+    L -->|Decrypt| N[Set Mode = 'd']
+    
+    M & N --> O[Show Loading Animation]
+    O --> P[Process File]
+    
+    P --> Q{Success?}
+    Q -->|Yes| R[Log Action to History]
+    R --> S[Show Success Message]
+    S --> T[Play Success Sound]
+    Q -->|No| U[Show Error Message]
+    U --> V[Play Error Sound]
+    
+    T & V --> C
+    
+    %% History Screen Flow
+    F --> W[Open history.txt]
+    W --> X{File Exists?}
+    X -->|Yes| Y[Display History Entries]
+    X -->|No| AA[Show No History Message]
+    Y & AA --> AB[Wait for Key Press]
+    AB --> C
+    
+    %% Encryption Process Details
+    subgraph Encryption Processing
+        P --> CA[Read File Binary]
+        CA --> CB[Apply Caesar Cipher]
+        CB --> CC[Shift Characters: encrypt? +shift : -shift]
+        CC --> CD[Generate Output Path]
+        CD --> CE[Write Processed File]
+        CE --> CF[Return Success Status]
+    end
+    
+    %% UI Components
+    subgraph UI Rendering
+        C --> UA[Draw Main Menu]
+        E --> UB[Draw File Selection Screen]
+        F --> UC[Draw History Screen]
+        I & U --> UD[Message Box]
+        O --> UE[Animated Dots]
+    end

@@ -1,0 +1,86 @@
+graph TB
+    subgraph "Main Application"
+        MAIN[main.cpp<br/>Entry Point]
+    end
+    
+    subgraph "User Interface Layer"
+        UI[user_interface.cpp<br/>Main Menu & Navigation]
+        UIH[user_interface.h<br/>UI Function Declarations]
+        
+        UI --> UIH
+    end
+    
+    subgraph "Core Processing Layer"
+        ENC[encryption.cpp<br/>File Processing & Caesar Cipher]
+        ENCH[encryption.h<br/>Encryption Function Declarations]
+        
+        HIST[history.cpp<br/>Operation Logging]
+        HISTH[history.h<br/>Logger Function Declarations]
+        
+        ENC --> ENCH
+        HIST --> HISTH
+    end
+    
+    subgraph "UI Helper Components"
+        HELP[helpers.cpp<br/>File Dialog Operations]
+        HELPH[helpers.h<br/>Helper Function Declarations]
+        
+        ANIM[animations.cpp<br/>Loading Animations]
+        ANIMH[animations.h<br/>Animation Function Declarations]
+        
+        HELP --> HELPH
+        ANIM --> ANIMH
+    end
+    
+    subgraph "External Dependencies"
+        GRAPHICS[graphics.h<br/>Graphics Library]
+        WINDOWS[windows.h<br/>Windows API]
+        COMMDLG[commdlg.h<br/>Common Dialog API]
+        STD[Standard C++ Libraries<br/>fstream, string, vector, chrono]
+    end
+    
+    subgraph "File System"
+        INPUT[Input Files<br/>Text/Binary Files]
+        OUTPUT[Output Files<br/>encrypted_* / decrypted_*]
+        HISTFILE[history.txt<br/>Operation Log]
+        ASSETS[Assets<br/>background.bmp<br/>success.wav<br/>error.wav]
+    end
+    
+    %% Main connections
+    MAIN --> UI
+    UI --> ENC
+    UI --> HIST
+    UI --> HELP
+    UI --> ANIM
+    
+    %% External library connections
+    UI --> GRAPHICS
+    UI --> WINDOWS
+    HELP --> WINDOWS
+    HELP --> COMMDLG
+    ANIM --> GRAPHICS
+    ANIM --> WINDOWS
+    ENC --> STD
+    HIST --> STD
+    
+    %% File system connections
+    ENC --> INPUT
+    ENC --> OUTPUT
+    HIST --> HISTFILE
+    UI --> ASSETS
+    HELP --> INPUT
+    
+    %% Styling
+    classDef mainApp fill:#FF6B6B,stroke:#333,stroke-width:2px,color:#fff
+    classDef uiLayer fill:#4ECDC4,stroke:#333,stroke-width:2px,color:#fff
+    classDef coreLayer fill:#45B7D1,stroke:#333,stroke-width:2px,color:#fff
+    classDef helperLayer fill:#96CEB4,stroke:#333,stroke-width:2px,color:#fff
+    classDef external fill:#FFEAA7,stroke:#333,stroke-width:2px
+    classDef files fill:#DDA0DD,stroke:#333,stroke-width:2px
+    
+    class MAIN mainApp
+    class UI,UIH uiLayer
+    class ENC,ENCH,HIST,HISTH coreLayer
+    class HELP,HELPH,ANIM,ANIMH helperLayer
+    class GRAPHICS,WINDOWS,COMMDLG,STD external
+    class INPUT,OUTPUT,HISTFILE,ASSETS files
