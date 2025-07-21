@@ -1,0 +1,38 @@
+stateDiagram-v2
+    [*] --> ShowMainMenu
+    ShowMainMenu --> UserChoice
+    
+    UserChoice --> EncryptFile: Select Encrypt
+    UserChoice --> DecryptFile: Select Decrypt
+    UserChoice --> ShowHistory: Select History
+    
+    EncryptFile --> OpenFileDialog
+    DecryptFile --> OpenFileDialog
+    
+    OpenFileDialog --> FileSelectedCheck
+    FileSelectedCheck --> ShowError: No file selected
+    FileSelectedCheck --> ShowOperationChoice: File selected
+    
+    ShowOperationChoice --> SetMode
+    SetMode --> ShowLoadingAnimation
+    
+    ShowLoadingAnimation --> ProcessFile
+    ProcessFile --> CheckSuccess
+    
+    CheckSuccess --> LogSuccess: Success
+    CheckSuccess --> ShowError: Failure
+    
+    LogSuccess --> PlaySuccessSound
+    PlaySuccessSound --> ShowSuccessMessage
+    ShowSuccessMessage --> ShowMainMenu
+    
+    ShowError --> PlayErrorSound
+    PlayErrorSound --> ReturnToMainMenu
+    ReturnToMainMenu --> ShowMainMenu
+    
+    ShowHistory --> DisplayHistoryLog
+    DisplayHistoryLog --> WaitForKeyPress
+    WaitForKeyPress --> ShowMainMenu
+    
+    UserChoice --> ExitApplication: Select Exit
+    ExitApplication --> [*]
