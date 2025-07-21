@@ -1,0 +1,31 @@
+sequenceDiagram
+    actor User
+    participant UI
+    participant Helpers
+    participant Core
+    participant Logger
+
+    User->>UI: Clicks Option (Start/History/Exit)
+    
+    alt Start (Encrypt/Decrypt)
+        UI->>Helpers: openFileDialog()
+        Helpers-->>UI: File path
+        alt Valid File
+            UI->>User: Show Encrypt/Decrypt buttons
+            User->>UI: Selects operation
+            UI->>Core: processFile()
+            Core->>Logger: log(action, filename)
+            Core-->>UI: Success status
+            UI->>User: Show result + Play sound
+        else Invalid File
+            UI->>User: Show error + Play error sound
+        end
+    else History
+        UI->>Logger: Read history.txt
+        Logger-->>UI: Log entries
+        UI->>User: Display history
+    else Exit
+        UI->>UI: Terminate application
+    end
+    
+    UI->>User: Return to Main Menu
